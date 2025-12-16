@@ -1,7 +1,5 @@
-payload
-core
-cert.pem
-key.pem
-part1*
-*_part1
-output.txt
+# Generated patch artifacts
+part3/part3.e9
+part3/*_patched
+part3/*.objdump
+part3/*.hexdump
