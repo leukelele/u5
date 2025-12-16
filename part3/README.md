@@ -9,14 +9,14 @@ binary receives only the amount of data its stack buffers can safely hold.
 
 ```bash
 cd part3
-./patch.sh
+./part3.sh
 ```
 
-The script compiles `patch.c` into `patch.e9` and rewrites every binary in
+The script compiles `part3.c` into `part3.e9` and rewrites every binary in
 `../testcases/`, producing sibling outputs named `<binary>_patched`. Originals
 are left untouched so you can diff and test both versions side by side. For
-traceability, `patch.sh` also emits `*_patched.objdump` and `*_patched.hexdump`
-files capturing the rewritten call sites.
+traceability, `part3.sh` also emits `*_patched.objdump` and
+`*_patched.hexdump` files capturing the rewritten call sites.
 
 ## Length policy
 
@@ -35,7 +35,7 @@ back to a conservative 64‑byte ceiling.
 
 ## Verifying the patch
 
-After running `patch.sh`, inspect the rewritten call sites to confirm the new
+After running `part3.sh`, inspect the rewritten call sites to confirm the new
 length constants are in place:
 
 ```bash

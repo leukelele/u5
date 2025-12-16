@@ -1,23 +1,5 @@
 # Generated patch artifacts
-part3/patch.e9
+part3/part3.e9
 part3/*_patched
 part3/*.objdump
 part3/*.hexdump
-payload
-core
-cert.pem
-key.pem
-part1*
-*_part1
-output.txt
-!part1/
-!part1/**
-part2*
-*_part2
-!part2/
-!part2/**
-!part3/
-!part3/README.md
-!part3/patch_binaries.py
-part3/*_patched
-*_patched
