@@ -6,6 +6,36 @@ For this unit, we have prepared three exploitable binaries drawn from past chall
 
 All essential resources for this unit are available in the [User Guide] and [Programming Guide]. You may also refer to the [tutorial page][tutorial] for example uses of the e9patch framework in patching and instrumenting binaries. The detailed description of the unit5 can be found from [here](https://codimd.syssec.org/s/EUJInF37H).
 
+## Assignment tasks
+
+### Part 1: Instruction counting (20 pt)
+
+Extend the tutorial template to rewrite the target binary so it counts **all executed instructions** and **all memory-access instructions (reads and writes)**. The patched program should print both totals, similar to the sample output shown below:
+
+```
+==================================================
+Number of all instruction executed: 123456789
+Number of memory instruction executed: 9876543
+==================================================
+```
+
+Avoid instrumenting the analysis routine on every single instruction (see §5.3 of the e9patch paper) to prevent trampoline conflicts.
+
+### Part 2: Shadow Stack (40 pt)
+
+Instrument `call` and `ret` instructions to maintain a shadow stack, reusing earlier ShadowStacks labs as needed. The rewriter cannot patch external libraries (e.g., `printf` in libc), so ensure the shadow stack tolerates benign inputs while still blocking control-flow hijacking attempts.
+
+An example implementation lives in `part2/`. Run it with:
+
+```
+cd part2
+./part2.sh /bin/ls
+```
+
+### Part 3: Postmortem patching (45 pt)
+
+Patch the provided vulnerable binaries after the fact to align their input lengths with the actual buffer sizes. A minimal patcher that rewrites the offending `fgets`/`read` lengths for all three supplied programs lives in `part3/`.
+
 ---
 [tutorial]:https://codimd.syssec.org/s/ZY71YEBHW
 [e9patch]:https://github.com/GJDuck/e9patch
