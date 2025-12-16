@@ -26,7 +26,7 @@ void shadow_check(uint64_t retaddr) {
         unsafe_abort("stack underflow", retaddr, 0);
     }
 
-    // Allow benign external calls by discarding frames until the return address matches.
+    // allow benign external calls by discarding frames until the return address matches.
     while (shadow_top > 0 && shadow_stack[shadow_top - 1] != retaddr) {
         shadow_top--;
     }

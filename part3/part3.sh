@@ -26,7 +26,7 @@ for target in "$TARGET_DIR"/*; do
   echo "  - $base -> $(basename -- "$output")"
   e9tool --patch "$PATCH_E9" --output "$output" "$target"
 
-  # Capture the patched call sites for documentation/inspection.
+  # capture the patched call sites for documentation/inspection.
   objdump -d "$output" > "$output.objdump"
   head -c 256 "$output" | hexdump -C > "$output.hexdump"
 done

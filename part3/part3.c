@@ -8,9 +8,7 @@
 /*
  * Trampoline-based hardening for the supplied testcases.
  * The wrappers clamp overly large length arguments before
- * delegating to the original libc implementation, mirroring
- * the instrumentation style used in the earlier parts of the
- * lab (E9PATCH_EXTERN + E9PATCH_TRAMPOLINE + E9PATCH_PATCHSET).
+ * delegating to the original libc implementation.
  */
 
 extern char *program_invocation_short_name;

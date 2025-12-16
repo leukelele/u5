@@ -1,4 +1,4 @@
-# Part 2: Shadow stack example
+# Part 2: Shadow stack
 
 This code instruments `call` and `ret` instructions with e9patch to maintain a
 simple shadow stack.
@@ -13,5 +13,5 @@ simple shadow stack.
 cd part2
 ./part2.sh /bin/ls
 ```
-The script emits `output.txt` showing final shadow stack depth and terminates
+The script outputs `output.txt` showing final shadow stack depth and terminates
 early on mismatches.
