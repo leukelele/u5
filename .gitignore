@@ -1,3 +1,8 @@
+# Generated patch artifacts
+part3/patch.e9
+part3/*_patched
+part3/*.objdump
+part3/*.hexdump
 payload
 core
 cert.pem
